@@ -1,0 +1,5 @@
+1.- Obtener recursos necesarios
+2.- Definir el diseño
+3.- Desarrollar el algoritmo
+4.- Realizar pruebas
+5.- Corregir errores
