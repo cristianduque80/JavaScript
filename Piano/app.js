@@ -1,20 +1,36 @@
-//Asignar un evento a un elemento
-//event listener
-var btns = document.querySelectorAll('button');
+//-----------------------PRIMERA FORMA----------------------- 
+/*
+    //Seleccionar el elemento mendiante su id con getElementById
+    var btn_do = document.getElementById('btn_do');
 
-btns.forEach(function (button){
-    button.addEventListener('click', playSound);
-})
+    //Se implementa un evento click usando addEventListener
+    btn_do.addEventListener('click',playSound);
 
-//document.getElementById('btn_do').addEventListener('click',playSound);
+    //Funcion que se ejecuta cuando se da click en el boton
+    function playSound() {
+        //tener elemento audio
+        //obtener referencia del elemento
+        //dar la orden de reproducir
+        var audio_do = document.getElementById('audio_do');
+        audio_do.pause();//Pausa el audio  
+        audio_do.currentTime = 0;//Reinica el audio
+        audio_do.play();//Reproduce el audio
+    }
+*/
+
+//-----------------------FORMA GENERALIZADA-----------------------
+var btns = document.querySelectorAll('button');//Selecciona todo los botones
+
+//Recorre todos los botones
+btns.forEach(function (buttons){
+    buttons.addEventListener('click', playSound);
+});
 
 function playSound(event){
-    console.log(event);
-    //Tener un elemento audio en la pagina
-    //Obtener una referencia del elemento
-    //Reproducir el sonido
-    //var audio = document.getElementById('audio_do');
-    //audio.pause();          /*Estas dos lineas equivale a realizar un stop */
-    //audio.currentTime = 0;  /*ya que dicha funcion no existe               */
-    //audio.play();
-}
+    var sound = event.target.dataset.sound;
+    //console.log(button);
+    var audio=document.getElementById('audio_'+sound);
+    audio.pause();
+    audio.currentTime=0;
+    audio.play();
+};
