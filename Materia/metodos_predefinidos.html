@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodos Predefinidos</title>
+</head>
+<body>
+    <script>
+        let x = 'Aprendiendo JavaScript'; //string
+        let y = 'Aprendiendo JavaScript, JavaScript es un lenguaje muy poderoso,';
+        console.log(x.length);//Propiedad .length indica el numero de caracteres
+        //string -> String es un Objeto
+        /*
+        console.log(x.toUpperCase());//Generan un nuevo valor a partir de la varaible en la que se invoca el metodo
+        console.log(x.toLowerCase());
+        console.log(x);//El valor original no se ve afectado
+        x = x.toUpperCase();//Cambia la variable original
+        */
+        console.log(x);
+        let position = x.indexOf('JavaScript');//Este metodo indica el indice de la primera vez que sale un caracter/es
+        console.log(position); 
+
+        console.log(y.replace(/JavaScript/g,'JS'));//Para remplazar todos los string 'JavaScript' por 'JS' se emplea expresiones regulares
+         //Usando /JavaScript/g buscamos un patron de busqueda en la cadena, obteniendo mas de una coincidencia.
+         
+
+        //---EJEMPLO:Separar la cadena 'y' en dos
+        let punto_corte = y.lastIndexOf('JavaScript');//Indica el indice de la ultima vez que sale el caracter/es
+        console.log(y.slice(punto_corte));//Deja pasar los caracteres apartir del indice en adelante (incluyendo el indice)
+
+        //--EJEMPLO:Arreglos y expresiones regulares
+        let personas = ['Cristian','Jose','Alex','Maria'];
+        console.log(personas.join(' , '));
+
+        let oraciones = y.split(', ');
+        console.log(oraciones);
+    </script>
+</body>
+</html>
