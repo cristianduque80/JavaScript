@@ -7,21 +7,37 @@
 </head>
 <body>
     <script>
-        //Declaracion de una funcion
-        function sum(a,b){
-            return a+b;
-        }
+        //---1.FUNCION---
+            console.log (sum(3,2));  //1.4.-Se puede ejecutar antes de su declaracion, es decir, se le puede aplicar Hosting (eleva la funcion)
+            //1.1.-Declaracion de la funcion
+            function sum(a,b){
+                return a+b; //1.1.1.-Sentencia que ejecuta la funcion, en este caso retorna el resultado de a+b
+            }
+            let c = sum(2,3); //1.2.-Ejecucion de la funcion sum junto con la asignacion de los parametros a y b (el resultado se guarda en la variable c)
+            console.log (c);  //1.3.-Enseñar por consola la variable c
 
-        let d = mult(3,2)
-        let mult = function (a,b){
-            return a*b;
-        }
+        //---2.FUNCION ANONIMA--- 
+            //console.log(anonima(2,3)); //2.3.-Si se ejecuta la funcion antes de su declaracion se origina una error, es decir, no posee la caracteristica del Hosting.
+            //2.1.-Declaracion de la funcion anonima y se asigna a la variable 'anonima' (si no se le asigna una variable no funciona)
+            let anonima = function (a,b){ 
+                return a*b//2.1.1.-Setencia que ejecuta la funcion anonima, en este caso retorna el resultado de a*b  
+            }
+            console.log(anonima(3,3));//2.2.-Ejecucion de la funcion y enseña por consola la variable 'anonima'.
 
-       
+        //---3.FNCION COMO PROPIEDAD DE UN OBJETO---
+            let player = {//Como la funcion pasa a ser parte de un objeto se llama 'metodo'
+                name: 'Cristian',
+                sayHi: function (){
+                    console.log(`Hola, soy ${this.name}`)
+                }
+            }
+            player.sayHi('Jose');
 
-    console.log(`Resultado multi: ${d}`)
-    console.log(sum(5,5));
-    console.log(typeof sum); //-> Arroja 'function' sin embargo, debido a que es un subtipo es un 'object'
+        //---4.FUNCION FLECHA---
+            let a = (nombre) => console.log(`Wenas ${nombre}`); //4.1.-Esta funcion no hace falta usar el prefijo function para declararla
+            //4.2.-Retorna automitcamente un valor, asi que no hace falta usar 'return'
+            a('Cristian');//4.3.-Se comporta como una funcion anonima cuando se ejecuta por lo que necesita declararse asignandole una variable
+            
     </script>
 </body>
 </html>
