@@ -1,27 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piedra Papel o Tijeras</title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<title>Piedra, papel y/o tijeras</title>
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
-    <main>
-    <div>
-        Eleccion de la maquina
-    </div>
-    <div>
-        Ganador
-    </div>
-    <div>
-        <button><img src="images/paper.png" alt="Papel"></button>
-        <button><img src="images/rock.png" alt="Piedra"></button>
-        <button><img src="images/scissors.png" alt="Tijera"></button>
-    </div>
-    </main>
-   
-    
-    <script src="app.js"></script>
+	<section id="game-zone">
+		<figure>
+			<figcaption>Jugador</figcaption>
+			<img src="images/rock.png" alt="Elección del jugador" id="figurePlayer">	
+		</figure>
+		
+		<figure>
+			<figcaption>Computadora</figcaption>
+			<img src="images/rock.png" alt="Elección del computador" id="figureComputer">	
+		</figure>
+	</section>
+	<p id="result">
+		Gana <strong id="resultWinner">---</strong>
+		en contra de <strong id="resultLoser">---</strong> .
+	</p>
+	<p id="score">
+		Has ganado <strong id="scorePlayer">--</strong> veces.
+		Te papearon <strong id="scoreComputer">--</strong> veces.
+	</p>
+
+	<section>
+		<p>Escoge una opción:</p>
+		<button data-choise="rock" >
+			<img src="images/rock.png" alt="Jugar usando piedra">
+		</button>
+		<button data-choise="paper" >
+			<img src="images/paper.png" alt="Jugar usando papel">
+		</button>
+		<button data-choise="scissors" >
+			<img src="images/scissors.png" alt="Jugar usando tijeras">
+		</button>
+	</section>
+
+	<script src="app.js"></script>
 </body>
 </html>
