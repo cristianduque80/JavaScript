@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+<body>
+    <script>
+        function sum(text, ...num){
+            let resultado = 0;
+            num.forEach(valor=>resultado+=valor);
+            console.log(text+resultado);
+            
+        }
+        
+        const numros=[10,5,5];
+        sum("La suma total es: ",...numros);
+    </script>
+</body>
+</html>

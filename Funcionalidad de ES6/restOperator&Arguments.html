@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest operator</title>
+</head>
+<body>
+    <script>
+
+        //Acceder a los parametros sin declararlos en la función
+        function sumArguments(string){
+            console.log("---USANDO ARGUMENTS---")
+
+            console.log(arguments); //Se obtiene un,objeto que permite acceder a los parametros que la funcion recibe
+            
+            const valores = [].slice.apply(arguments,[1]); //Convierte el objeto en un array que se corta a apartir del valor dado en apply(arguments,[<valor>])
+
+            let resultado=0;
+            valores.forEach(valor=>resultado+=valor);
+            console.log(`${string}${resultado}`)
+        }
+
+        //Empleando el parametro REST
+        function sumRest(string,...values){//Con "...<parametro>" se obtiene un array con todos los valores suministrados a la funcion
+            
+            console.log("---USANDO EL PARAMETRO REST---")
+
+            console.log(values)//Array compuesto por los argumentos enviados
+
+            let resultado = 0;
+            values.forEach(valor => resultado+=valor);
+            console.log(`${string}${resultado}`);
+        }
+        
+        //sumArguments(6,7);
+        sumArguments("La suma total de los numeros es: ",6,7);
+        //sumRest (4,5);
+        sumRest ("La suma total de los numeros es: ",4,5);
+       
+        
+
+    </script>
+</body>
+</html>
