@@ -24,6 +24,7 @@ function startGame(event){
 
     //Winner
     let Winner = choiseWinner(playerChoise,computerChoise);
+    result.innerHTML = `${Winner==1 ? "Gana" : "Pierde"} <b>Jugador</b> con ${playerChoise} en contra de Computadora con ${computerChoise}.`
     choiseImg (playerChoise,computerChoise);
     console.log(Winner);
     if (Winner==0){//Empate
@@ -66,14 +67,12 @@ function tie(){
 }
 
 function playerWin(player,computer){
-    result.textContent=`Gana jugador (${player}) en contra de computadora (${computer}).`; //textContent cambia el contenido correspondiente al ID result
     pWin++;
     scorePlayer.textContent=pWin; //textContent cambia el contenido correspondiente al ID scorePlayer
 
 }
 
 function computerWin(player,computer){
-    result.textContent=`Pierde jugador (${player}) en contra de computadora (${computer}).`; //textContent cambia el contenido correspondiente al ID result
     cWin++;
     scoreComputer.textContent=cWin; //textContent cambia el contenido correspondiente al ID scorePlayer
 }
