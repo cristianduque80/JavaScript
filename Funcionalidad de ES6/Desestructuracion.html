@@ -16,7 +16,7 @@
 
         //Usando desestructuracion
             //Ejm1 : Declaracion de una const [x,y,z] y asignacion de los valores
-              const p1 = [10,5,5];
+            const p1 = [10,5,5];
             const [x,y,z] = p1;  
             console.log(x,y,z) // *10 5 5*
 
@@ -29,6 +29,13 @@
             const p3 = [5, 3, 10];
             const [d,e,f,g=100] = p3;
             console.log(`d:${d} | e:${e} | f:${f} | valorDefecto: ${g}`)
+
+            //Ejm4: Usando Objetos
+            let {h, i} = {h:10, i:20};
+            console.log(h,i)
+
+
+    
 
     </script>
 </body>
