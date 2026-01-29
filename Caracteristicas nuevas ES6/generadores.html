@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generadores</title>
+</head>
+<body>
+    <script>
+        //Generadores: Funciones que pueden pausarse, permitiendo ejecutar la funcion por partes
+        //Iteradores: Permite iterar sobre una secuencia de elementos -> Disponen de un metodo next para realizar la siguiente iteracion y obtener un nuevo valor
+        function * contar(){// * -> Pasa de una funcion a un generador
+            console.log(`Dentro del generador ${1} `);
+            yield 'UNO';//Produce una pause en el generadory retorna un valor
+            console.log(`Dentro del generador ${2} `);
+            yield;
+            console.log(`Dentro del generador ${yield 7} `);
+        }
+
+    const iterador = contar();
+
+    const val1 = iterador.next();//Ejecuta por primera vez el algoritmo definido en el generador
+
+    console.log(val1);//Muestra: un objeto formado por estos atributos -> {value:xxx, donde:xxx} Donde done -> Indica si el generador termino y value -> Valor que retorna la iteracion 1
+
+    const val2 = iterador.next();;//Ejecuta por primera segunda el algoritmo definido en el generador
+
+    console.log(val2);
+
+    const val3 = iterador.next('ABC');
+
+    console.log(val3);
+
+
+    </script>
+</body>
+</html>
