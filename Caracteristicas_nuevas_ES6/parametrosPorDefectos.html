@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parametros por defecto</title>
+</head>
+<body>
+    <script>
+        /*
+        function example(param1){//Forma tradicional de establecer un valor por defecto del parametro
+
+            //if(param1){//(Forma incompleta)undefined == false por eso no lo imprime en pantalla
+            if(typeof param1=='undefined'){
+                param1="Valor por defecto";
+                console.log(param1);
+            }else{console.log(`El valor es: ${param1}`);}   
+        }*/
+
+
+        function example(param1="Valor por defecto"){//Forma actual de establecer el valor por defecto del parametro
+            
+            console.log(param1);
+        }
+
+        example(5);
+        example('Hola');
+        example();//Se obtiene un undefined
+        example(0);
+        example(null);
+        example(false);
+    </script>
+</body>
+</html>

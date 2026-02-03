@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     //--------------------------------------------DEMOSTRACION------------------------------------
+        class Rectangulo{
+            constructor(ancho,alto){
+                this.ancho = ancho;
+                this.alto = alto;
+            }
+
+            get area(){
+                return this.alto * this.ancho;
+            }
+
+            set dimensiones(obj){
+                console.log(`Nuevas dimensiones asignadas:`,obj)
+                this.ancho = obj.x;
+                this.alto = obj.y;
+            }
+        }
+
+    const r1 = new Rectangulo(4,4);
+    let area = r1.area;
+    console.log(`Area del primer triangulo: ${area} `);
+
+    r1.dimensiones =  {
+        x:5,
+        y:5
+    }
+
+    area= r1.area;
+    console.log(`Asignandole un nuevo area al primer triangulo: ${area}`);
+
+    //-------------------------------------------EJM#1--------------------------------------------
+    //En la clase Persona, reemplaza los métodos setNombre y setEdad por setters y crea getters correspondientes para acceder a las propiedades de forma controlada.
+
+    /*
+    class Person{
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        
+        presentation(){
+            console.log(`Hi, my name is ${this.name}. And I'm ${this.age}`);
+        }
+
+        setName(newName){
+            this.name = newName;
+        }
+
+        setAge(newAge){
+            this.age=newAge;
+        }
+    }
+
+    let person1 = new Person('Ana', 10);
+    person1.presentation();
+
+    person1.setName('Luis');
+    person1.setAge(20);
+    person1.presentation();
+    */
+console.log('---Ejemplo #1---');
+    class Person {
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        get presentation(){
+            console.log(`Hi, my name is ${this.name}. And I'm ${this.age}`)
+        }
+
+        set newName(nameSeleccted){
+            this.name = nameSeleccted;
+            //console.log(this.name);
+        }
+
+        set newAge(ageSeleccted){
+            this.age = ageSeleccted;
+            //console.log(this.age);
+        }
+
+        get myName(){
+            console.log(`Tu nombre es: ${this.name}`)
+        }
+        
+
+        get myAge(){
+            console.log(`Tu edad es: ${this.age}`);
+        }
+
+    }
+
+    let p1 = new Person('Pepito',24);//<- Creacion de instancia
+    p1.presentation;//<-Se llama a la propiedad (get) presetation para obtener el mensaje en consola
+    p1.myAge;
+    p1.myName;
+
+    p1.newName='Cristian';//<-Asignacion de nuevos valores para el nombre con la pripiedad (set) newName
+    p1.newAge=12;//<-Asignacion de nuevos valores para la edad con la pripiedad (set) newAge
+    p1.presentation;
+    p1.myAge;
+    p1.myName;
+
+
+
+
+
+    </script>
+</body>
+</html>

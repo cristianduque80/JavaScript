@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases</title>
+</head>
+<body>
+    <script>
+        //Clase: Abstraccion de un objeto que tiene caracteristicas en común
+        //Herencia: Define una clase a partir de otra clase mas general -> clase padre
+    //----------------------------------------DEMOSTRACION----------------------------------------
+        class Perro {
+            constructor (edad,nombre,raza){//Constructor que crea la instancia de la clase e inicializa las propiedades
+                this.nombre = nombre;
+                this.raza=raza;
+                this.edad=edad;
+            }
+            ladrar(){//Al ser metodo no se usa function
+                console.log(`El perro ${this.nombre} ha ladrado.`);
+            }
+        }
+
+        let perro1 = new Perro(7,'Ramon','Rottweiler');//Se crea una instancia de la clase
+        perro1.ladrar();
+
+    //---------------------------------------------EJM#1------------------------------------------
+    //Definir una clase Persona con las propiedades nombre y edad. Incluye un método que permita mostrar un mensaje de saludo con el nombre y la edad de la persona
+    /*
+    class Person{
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        
+        presentation(){
+            console.log(`Hi, my name is ${this.name}. And I'm ${this.age}`);
+        }
+    }
+
+    let person1 = new Person('Ana', 10);
+    person1.presentation();
+    */
+    //---------------------------------------------EJM#2------------------------------------------
+    //Usa la clase Persona del ejercicio anterior y agrega métodos para modificar el nombre y la edad después de que el objeto haya sido creado.
+     class Person{
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        
+        presentation(){
+            console.log(`Hi, my name is ${this.name}. And I'm ${this.age}`);
+        }
+
+        setName(newName){
+            this.name = newName;
+        }
+
+        setAge(newAge){
+            this.age=newAge;
+        }
+    }
+
+    let person1 = new Person('Ana', 10);
+    person1.presentation();
+
+    person1.setName('Luis');
+    person1.setAge(20);
+    person1.presentation();
+
+    
+
+
+    </script>
+</body>
+</html>

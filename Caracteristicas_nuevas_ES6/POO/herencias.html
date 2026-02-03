@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //--------------------------------------------DEMOSTRACION------------------------------------
+    /*   
+        class Mascota {
+                constructor (edad,nombre,raza,tipo){//Constructor que crea la instancia de la clase e inicializa las propiedades
+                this.nombre=nombre;
+                this.raza=raza;
+                this.edad=edad;
+                this.tipo=tipo;
+            }
+
+            verInfo(){
+                console.log(`Nombre: ${this.nombre}`)
+                console.log(`Edad: ${this.edad}`);
+                console.log(`Raza: ${this.raza}`);
+                console.log(`Tipo: ${this.tipo}`);
+            }
+        }
+
+        class Perro extends Mascota{//Esta expresion expresa que la clase Perro( hija) hereda propiedades de la clase Mascota (padre)
+            constructor (edad,nombre,raza,dBLadrido){
+                super(edad,nombre,raza,'perro');
+                this.dBLadrido=dBLadrido;
+            }
+
+            ladrar(){
+                console.log(`El perro ${this.nombre} ha ladrado a un dB de ${this.dBLadrido}.`);
+            }
+        }
+
+        class Gato extends Mascota{
+            constructor (edad,nombre,raza){
+                super(edad,nombre,raza,'gato');
+                
+            }
+        }
+
+        let perro1 = new Perro(7,'Ramon','Rottweiler','Perro',17);//Se crea una instancia de la clase
+        perro1.ladrar();
+        perro1.verInfo();
+
+        let gato1 = new Gato(3,'Apolo','Desconocido')
+        gato1.verInfo();
+    */
+    //-------------------------------------------EJM#1--------------------------------------------
+    //Crea una clase Empleado que herede de Persona. La clase Empleado debe tener una propiedad adicional sueldo y un método para mostrarlo.
+    class Persona {
+        constructor(name,lastName,dni){
+            this.name = name;
+            this.lastName = lastName;
+            this.dni = dni;
+        }
+
+        infoPersonal(){
+            console.log(`Name: ${this.name}`);
+            console.log(`Lastname: ${this.lastName}`);
+            console.log(`DNI: ${this.dni}`);
+        }
+    }
+
+    class Empleado extends Persona{
+        constructor(name,lastName,dni,salary){
+            super(name,lastName,dni);
+            this.salary = salary;
+        }
+
+        infoWorker(){
+            console.log(`Salary: ${this.salary}`);
+        }
+    }
+
+    let empleado1 = new Empleado('Cristian','Duque',28332592,'330$');
+    empleado1.infoPersonal();
+    empleado1.infoWorker();
+    
+    </script>
+</body>
+</html>
